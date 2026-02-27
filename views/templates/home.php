@@ -13,6 +13,7 @@
             
             <div class="footer">
                 <span class="info"> <?= ucfirst(Utils::convertDateToFrenchFormat($article->getDateCreation())) ?></span>
+                <span class="info"><?= $article->getViewsCount() ?> vues</span>
                 <a class="info" href="index.php?action=showArticle&id=<?= $article->getId() ?>">Lire +</a>
             </div>
         </article>
