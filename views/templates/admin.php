@@ -6,7 +6,7 @@
 ?>
 
 <h2>Edition des articles</h2>
-
+<a class="submit" href="index.php?action=showUpdateArticleForm">Ajouter un article</a>
 <div class="adminArticle">
     <?php foreach ($articles as $article) { ?>
         <div class="articleLine">
@@ -17,5 +17,4 @@
         </div>
     <?php } ?>
 </div>
-
-<a class="submit" href="index.php?action=showUpdateArticleForm">Ajouter un article</a>
+<a class="submit" href="index.php?action=showStats">Voir les statistiques</a>
