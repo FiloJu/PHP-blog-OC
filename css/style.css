@@ -110,6 +110,7 @@ form .formGrid .submit {
     color: white;
     background-color: var(--commentColor);
     border: none;
+    margin-bottom: 20px;
 }
 
 /**
@@ -335,6 +336,55 @@ a.info {
 .articleLine > div {
     padding: 20px;
     border: 1px solid var(--backgroundColor);
+}
+
+/** 
+ * Tableau stats admin.
+ */
+.statsTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    font-family: inherit;
+}
+
+.statsTable thead tr {
+    background-color: var(--headerColor);
+    color: white;
+}
+
+.statsTable thead th {
+    padding: 12px 16px;
+    text-align: left;
+}
+
+.statsTable thead th a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.statsTable thead th a:hover {
+    color: var(--headerPaleColor);
+    text-decoration: underline;
+}
+
+.statsTable td {
+    padding: 10px 16px;
+}
+
+.statsTable .rowEven {
+    background-color: var(--backgroundColor);
+}
+
+.statsTable .rowOdd {
+    background-color: var(--commentPaleColor);
+    color: white;
+}
+
+.statsTable tr:hover {
+    background-color: var(--commentColor);
+    color: white;
 }
 
 /** 
