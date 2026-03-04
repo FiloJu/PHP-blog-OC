@@ -113,6 +113,11 @@ form .formGrid .submit {
     margin-bottom: 20px;
 }
 
+.submitDanger {
+    display: inline-block;
+    margin-top: 10px;
+}
+
 /**
  * Coin replié des formulaires
  */
