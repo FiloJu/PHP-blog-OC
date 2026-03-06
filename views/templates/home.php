@@ -7,13 +7,13 @@
 <div class="articleList">
     <?php foreach($articles as $article) { ?>
         <article class="article">
-            <h2><?= $article->getTitle() ?></h2>
+            <h2><?= htmlspecialchars($article->getTitle()) ?></h2>
             <span class="quotation">«</span>
-            <p><?= $article->getContent(400) ?></p>
+            <p><?= htmlspecialchars($article->getContent(400)) ?></p>
             
             <div class="footer">
                 <span class="info"> <?= ucfirst(Utils::convertDateToFrenchFormat($article->getDateCreation())) ?></span>
-                <span class="info"><?= $article->getViewsCount() ?> vues</span>
+                <span class="info"><?= htmlspecialchars($article->getViewsCount()) ?> vues</span>
                 <a class="info" href="index.php?action=showArticle&id=<?= $article->getId() ?>">Lire +</a>
             </div>
         </article>
