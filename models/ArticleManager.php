@@ -72,7 +72,7 @@ class ArticleManager extends AbstractEntityManager
         $articles = [];
 
         while ($row = $result->fetch()) {
-            $articles[] = $row;
+            $articles[] = new Article($row); //instancier la classe d'Article
         }
         return $articles;
     }
