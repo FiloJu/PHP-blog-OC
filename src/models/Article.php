@@ -1,5 +1,9 @@
 <?php
 
+namespace App\Models;
+
+use DateTime;
+
 /**
  * Entité Article, un article est défini par les champs
  * id, id_user, title, content, date_creation, date_update
@@ -71,7 +75,8 @@ class Article extends AbstractEntity
     public function getContent(int $length = -1): string
     {
         if ($length > 0) {
-            // Ici, on utilise mb_substr et pas substr pour éviter de couper un caractère en deux (caractère multibyte comme les accents).
+            // Ici, on utilise mb_substr et pas substr pour éviter de couper un caractère en deux
+            // (caractère multibyte comme les accents).
             $content = mb_substr($this->content, 0, $length);
             if (strlen($this->content) > $length) {
                 $content .= "...";

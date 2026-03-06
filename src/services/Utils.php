@@ -1,5 +1,10 @@
 <?php
 
+namespace App\Services;
+
+use DateTime;
+use IntlDateFormatter;
+
 /**
  * Classe utilitaire : cette classe ne contient que des méthodes statiques qui peuvent être appelées
  * directement sans avoir besoin d'instancier un objet Utils.
@@ -25,7 +30,8 @@ class Utils
     /**
      * Redirige vers une URL.
      * @param string $action : l'action que l'on veut faire (correspond aux actions dans le routeur).
-     * @param array $params : Facultatif, les paramètres de l'action sous la forme ['param1' => 'valeur1', 'param2' => 'valeur2']
+     * @param array $params : Facultatif, les paramètres de l'action
+     * sous la forme ['param1' => 'valeur1', 'param2' => 'valeur2']
      * @return void
      */
     public static function redirect(string $action, array $params = []): void

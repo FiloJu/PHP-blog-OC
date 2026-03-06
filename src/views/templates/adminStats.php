@@ -53,7 +53,7 @@ function sortArrow(string $column, string $currentSortBy, string $order): string
     <tbody>
         <?php foreach ($articles as $index => $article) { ?>
             <tr class="<?= ($index % 2 === 0) ? 'rowEven' : 'rowOdd' ?>">
-                <td><?= Utils::format($article->getTitle()) ?></td>
+                <td><?= \App\Services\Utils::format($article->getTitle()) ?></td>
                 <td><?= $article->getViewsCount() ?></td>
                 <td><?= $article->getNbComments() ?></td>
                 <td><?= $article->getDateCreation()->format('d/m/Y') ?></td>

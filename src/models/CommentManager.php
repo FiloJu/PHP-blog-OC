@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Models;
+
 /**
  * Cette classe sert à gérer les commentaires.
  */
@@ -45,7 +47,9 @@ class CommentManager extends AbstractEntityManager
      */
     public function addComment(Comment $comment): bool
     {
-        $sql = "INSERT INTO comment (pseudo, content, id_article, date_creation) VALUES (:pseudo, :content, :idArticle, NOW())";
+        $sql = "INSERT INTO comment (pseudo, content, id_article, date_creation) 
+        VALUES (:pseudo, :content, :idArticle, 
+        NOW())";
         $result = $this->db->query($sql, [
             'pseudo' => $comment->getPseudo(),
             'content' => $comment->getContent(),

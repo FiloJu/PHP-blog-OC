@@ -1,5 +1,13 @@
 <?php
 
+namespace App\Controllers;
+
+use App\Models\ArticleManager;
+use App\Models\CommentManager;
+use App\Views\View;
+use App\Services\Utils;
+use Exception;
+
 class ArticleController
 {
     /**

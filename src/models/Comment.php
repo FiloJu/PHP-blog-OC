@@ -1,5 +1,8 @@
 <?php
 
+namespace App\Models;
+
+use DateTime;
 /**
  * Entité représentant un commentaire.
  * Avec les champs id, pseudo, content, et idArticle.

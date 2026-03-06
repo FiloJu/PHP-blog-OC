@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Models;
+
 /**
  * Classe qui gère les articles.
  */

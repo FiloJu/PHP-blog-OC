@@ -1,5 +1,15 @@
 <?php
 
+namespace App\Controllers;
+
+use App\Models\ArticleManager;
+use App\Views\View;
+use App\Services\Utils;
+use Exception;
+use App\Models\UserManager;
+use App\Models\Article;
+use App\Models\CommentManager;
+
 /**
  * Contrôleur de la partie admin.
  */

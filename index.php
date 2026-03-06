@@ -1,7 +1,13 @@
 <?php
 
-require_once 'config/config.php';
-require_once 'config/autoload.php';
+require_once 'src/config/config.php';
+require_once __DIR__ . '/vendor/autoload.php';
+
+use App\Services\Utils;
+use App\Controllers\ArticleController;
+use App\Controllers\CommentController;
+use App\Controllers\AdminController;
+use App\Views\View;
 
 // On récupère l'action demandée par l'utilisateur.
 // Si aucune action n'est demandée, on affiche la page d'accueil.

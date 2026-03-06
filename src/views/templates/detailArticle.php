@@ -8,14 +8,14 @@
 ?>
 
 <article class="mainArticle">
-    <h2> <?= Utils::format($article->getTitle()) ?> </h2>
+    <h2> <?= \App\Services\Utils::format($article->getTitle()) ?> </h2>
     <span class="quotation">«</span>
-    <p><?= Utils::format($article->getContent()) ?></p>
+    <p><?= \App\Services\Utils::format($article->getContent()) ?></p>
 
     <div class="footer">
-        <span class="info"> Publié le <?= Utils::convertDateToFrenchFormat($article->getDateCreation()) ?></span>
+        <span class="info"> Publié le <?= \App\Services\Utils::convertDateToFrenchFormat($article->getDateCreation()) ?></span>
         <?php if ($article->getDateUpdate() != null) { ?>
-            <span class="info"> Modifié le <?= Utils::convertDateToFrenchFormat($article->getDateUpdate()) ?></span>
+            <span class="info"> Modifié le <?= \App\Services\Utils::convertDateToFrenchFormat($article->getDateUpdate()) ?></span>
         <?php } ?>
         <span class="info"><?= htmlspecialchars($article->getViewsCount()) ?> vues</span>
     </div>
@@ -32,13 +32,13 @@
             echo '<li>';
             echo '  <div class="smiley">☻</div>';
             echo '  <div class="detailComment">';
-            echo '      <h3 class="info">Le ' . Utils::convertDateToFrenchFormat($comment->getDateCreation()) . ", " . Utils::format($comment->getPseudo()) . ' a écrit :</h3>';
-            echo '      <p class="content">' . Utils::format($comment->getContent()) . '</p>';
+            echo '      <h3 class="info">Le ' . \App\Services\Utils::convertDateToFrenchFormat($comment->getDateCreation()) . ", " . \App\Services\Utils::format($comment->getPseudo()) . ' a écrit :</h3>';
+            echo '      <p class="content">' . \App\Services\Utils::format($comment->getContent()) . '</p>';
             if (isset($_SESSION['user'])) {
                 echo '<a 
                     class="submit submitDanger" 
                     href="index.php?action=deleteComment&idComment=' . $comment->getId() . '&idArticle=' . $article->getId() . '"
-                    ' . Utils::askConfirmation("Supprimer ce commentaire ?") . '
+                    ' . \App\Services\Utils::askConfirmation("Supprimer ce commentaire ?") . '
                 >Supprimer</a>';
             }
             echo '  </div>';
