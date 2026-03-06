@@ -4,21 +4,7 @@
  * Tableau triable par colonne.
  */
 
-// Petite fonction locale pour générer l'URL de tri.
-function sortUrl(string $column, string $currentSortBy, string $reverseOrder): string
-{
-    $order = ($column === $currentSortBy) ? $reverseOrder : 'ASC';
-    return htmlspecialchars("index.php?action=showStats&sortBy=$column&order=$order");
-}
-
-// Flèche pour indiquer le tri actif.
-function sortArrow(string $column, string $currentSortBy, string $order): string
-{
-    if ($column !== $currentSortBy) {
-        return '';
-    }
-    return $order === 'ASC' ? ' ▲' : ' ▼';
-}
+use App\Services\StatsHelper;
 ?>
 
 <h2>Statistiques des articles</h2>
@@ -29,23 +15,23 @@ function sortArrow(string $column, string $currentSortBy, string $order): string
     <thead>
         <tr>
             <th>
-                <a href="<?= sortUrl('title', $sortBy, $reverseOrder) ?>">
-                    Titre<?= sortArrow('title', $sortBy, $order) ?>
+                <a href="<?= StatsHelper::sortUrl('title', $sortBy, $reverseOrder) ?>">
+                    Titre<?= StatsHelper::sortArrow('title', $sortBy, $order) ?>
                 </a>
             </th>
             <th>
-                <a href="<?= sortUrl('views', $sortBy, $reverseOrder) ?>">
-                    Vues<?= sortArrow('views', $sortBy, $order) ?>
+                <a href="<?= StatsHelper::sortUrl('views', $sortBy, $reverseOrder) ?>">
+                    Vues<?= StatsHelper::sortArrow('views', $sortBy, $order) ?>
                 </a>
             </th>
             <th>
-                <a href="<?= sortUrl('nb_comments', $sortBy, $reverseOrder) ?>">
-                    Commentaires<?= sortArrow('nb_comments', $sortBy, $order) ?>
+                <a href="<?= StatsHelper::sortUrl('nb_comments', $sortBy, $reverseOrder) ?>">
+                    Commentaires<?= StatsHelper::sortArrow('nb_comments', $sortBy, $order) ?>
                 </a>
             </th>
             <th>
-                <a href="<?= sortUrl('date_creation', $sortBy, $reverseOrder) ?>">
-                    Date<?= sortArrow('date_creation', $sortBy, $order) ?>
+                <a href="<?= StatsHelper::sortUrl('date_creation', $sortBy, $reverseOrder) ?>">
+                    Date<?= StatsHelper::sortArrow('date_creation', $sortBy, $order) ?>
                 </a>
             </th>
         </tr>
