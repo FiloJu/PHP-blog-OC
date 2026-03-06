@@ -14,8 +14,9 @@ function sortUrl(string $column, string $currentSortBy, string $reverseOrder): s
 // Flèche pour indiquer le tri actif.
 function sortArrow(string $column, string $currentSortBy, string $order): string
 {
-    if ($column !== $currentSortBy)
+    if ($column !== $currentSortBy) {
         return '';
+    }
     return $order === 'ASC' ? ' ▲' : ' ▼';
 }
 ?>
