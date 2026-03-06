@@ -1,10 +1,12 @@
 <?php
+
 /**
  * Affichage des statistiques des articles : vues, commentaires, date.
  * Tableau triable par colonne.
  */
 
 use App\Services\StatsHelper;
+
 ?>
 
 <h2>Statistiques des articles</h2>
