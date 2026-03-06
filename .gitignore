@@ -1,2 +1,4 @@
 src/config/config.php
 vendor/
+.php-cs-fixer.cache
+.php-cs-fixer.dist.php
